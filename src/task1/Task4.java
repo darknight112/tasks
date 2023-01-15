@@ -11,7 +11,7 @@ public class Task4 {
 			for (int l = 1; l < array.length; l++) {
 				if (array[i] + array[l] == totalSum) {
 					System.out.println(
-							"the pairs are====" + array[i] + "==== and ====" + array[l] + "====");
+							"the pairs are=====" + array[i] + "===== and =====" + array[l] + "=====");
 				}
 			}
 		}
