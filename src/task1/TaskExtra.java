@@ -4,7 +4,6 @@ import java.util.*;
 public class TaskExtra {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] rice= {900,1200,1200,1210,900,750,1050};
 		int[] wheat= {1100,1900,1500,1500,1500,1500,1400};
 		int[] cotton= {200,700,300,290,600,750,350};
@@ -18,6 +17,7 @@ public class TaskExtra {
 		   rice[i]=diffrence;
 		}
 		
+
 		for(int i=0;i<6;i++){
 		    if (profitRice>rice[i+1]){
 		        profitRice=rice[i+1];
