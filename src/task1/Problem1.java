@@ -10,20 +10,18 @@ public class Problem1 {
 		
 		int[] num= new int[] {1, 2, 3, 4, 5, 6}; // step 1 create array of integers
 		Arrays.sort(num);  // step 2 sort the array 
-		int[] highestFour= new int[4]; //step 3 create new array that will take highest four numbers from (num array)
-		int count=0; // count will be responsible for the index number in highestFour array.
-		for(int i=5;i>1;i--) { //this loop to take the highest 4 numbers from num array to highestFour array.
-			highestFour[count]=num[i];
-			count++;
-		}
+		//int[] highestFour= new int[4]; //step 3 create new array that will take highest four numbers from (num array)
 		int product=1; //product will be the result of product the highest four numbers in array.
-		for(int i=0; i<4;i++) { //this loop to calculate the product result
-			product=highestFour[i]*product;
+
+		//int count=0; // count will be responsible for the index number in highestFour array.
+		
+		for(int i=2; i<6;i++) { //this loop to calculate the product result
+			product=num[i]*product;
 		}
 		
 		
 		
-		System.out.println(product + " = ( " + highestFour[3] + " * "+highestFour[2] + " * " + highestFour[1] + " * " + highestFour[0] + ")");
+		System.out.println(product + " = ( " + num[num.length-1] + " * "+num[num.length-2] + " * " + num[num.length-3] + " * " + num[num.length-4] + ")");
 
 
 	}
