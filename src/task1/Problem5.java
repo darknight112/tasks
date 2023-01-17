@@ -1,64 +1,44 @@
 package task1;
-import java.io.*;
+
 import java.util.*;
 
 public class Problem5 {
-	static int lds(int arr[], int n)
-	{
-	    int lds[] = new int[n];
-	    int i, j, max = 0;
-	    Stack<Integer> stack = new Stack<Integer>();
-	    // Initialize LDS with 1
-	    // for all index. The minimum
-	    // LDS starting with any
-	    // element is always 1
-	    for (i = 0; i < n; i++)
-	        lds[i] = 1;
-	 
-	    // Compute LDS from every
-	    // index in bottom up manner
-	    for (i = 1; i < n; i++) {
-	        for (j = 0; j < i; j++) {
-	            if (arr[i] < arr[j] && lds[i] < lds[j] + 1) {
-	                lds[i] = lds[j] + 1;
-	    			stack.push(lds[j] + 1);
-	            }
-	        }
-	    }
-	    // Select the maximum
-	    // of all the LDS values
-	    for (i = 0; i < n; i++) {
-	        if (max < lds[i]) {
-	            max = lds[i];
-	            stack.push(max);
-	        }
-	    }
-	    // returns the length
-	    // of the LDS
-	    System.out.println(stack);
-	    return max;
+	public static void longestDecSubarray(int arr[], int n) {
+
+		int max = 1, len = 1, maxIndex = 0;	//max will store that maximum length of subarray, len will store the length of subarray
+		// max index will store the index of highest number of the longest subarray
+		for (int i = 1; i < n; i++) { // traverse the array from the 2nd element
+			if (arr[i] < arr[i - 1]) { // if current element if greater than previous element then len++
+				len++;
+			}
+			else {
+				if (max < len) { //update the max if len is greater than max
+					max = len;
+					maxIndex = i - max; //assign the index of maximum number in the subarray by calculate the deffrence between current index and max length
+				}
+				len = 1; // reset 'len' to 1 , to calculate again
+
+			}
+		}
+
+		if (max < len) { //comparing max to len and update the max and maxIndex
+			max = len;
+			maxIndex = n - max;
+		}
+
+		for (int i = maxIndex; i < max + maxIndex; i++) { // Print the elements of longest
+			System.out.print(arr[i] + " ");
+		}
 	}
+
 	public static void main(String[] args) {
-		// Problem: Given an array of integers, write a function to find the longest decreasing subarray.
+		// Problem 5: Given an array of integers, write a function to find the longest decreasing subarray.
 		// Input: [1, 2, 3, 4, 5, 4, 3, 2, 1]
 		// Output: [5, 4, 3, 2, 1]
-		
-		//int[] arr= new int[] {1, 2, 3, 4, 5, 4,3,2,1,0};
-		//Stack<Integer> stack = new Stack<Integer>();
-		//for(int i=0;i<(arr.length-1);i++) {
-			//for(int j=1;j<(arr.length-1);j++) {
-				//if(arr[i]>arr[j] && arr[j]>arr[j+1]) {
-					//stack.push(arr[i]);
-				//}
+		int arr[] = {1, 2, 3, 4, 5, 4, 3, 2, 1};
+		int n = arr.length;
+		longestDecSubarray(arr, n);
 
-			//}
-		//}
-		int arr[] = { 15, 27, 14, 38,
-                63, 55, 46, 65, 85 };
-  int n = arr.length;
-  System.out.print("Length of LDS is " +
-                           lds(arr, n));
-  
 	}
 
 }
