@@ -3,8 +3,7 @@ import java.util.*;
 public class Problem7 {
 
 	public static void main(String[] args) {
-		// Problem: Given an array of integers, 
-		// write a function to find the missing number in the array where the missing number should be a multiple of 5.
+		// Problem: Given an array of integers, write a function to find the missing number in the array where the missing number should be a multiple of 5.
 		// Input: [5, 10, 20, 25, 30],
 		// Output: 15
 		
