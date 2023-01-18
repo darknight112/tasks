@@ -5,9 +5,7 @@ import java.util.*;
 public class Problem6 {
 
 	public static void main(String[] args) {
-		// Problem: Given an array of integers, write a function to find the number of
-		// times a given integer value appears in the array where the value is greater
-		// than 10.
+		// Problem 6: Given an array of integers, write a function to find the number of times a given integer value appears in the array where the value is greater than 10.
 		// Input: [1, 2, 15, 20, 15, 30, 20, 15, 15], val = 15
 		// Output: 4
 
