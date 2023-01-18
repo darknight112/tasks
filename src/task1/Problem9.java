@@ -18,10 +18,11 @@ public class Problem9 {
 			else {
 				numbers.push(input);
 				numbers.sort(null);
+				
 			}
 			
 		}
-		System.out.println(numbers);
+		System.out.println("The second largest element is "+ numbers.indexOf(numbers.size()));
 
 	}
 
