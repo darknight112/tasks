@@ -10,21 +10,19 @@ public class Problem8 {
 		// reverse = mam true
 
 		Stack<String> stc = new Stack<String>();
-		Scanner sr = new Scanner(System.in);
-
-		String name1 = "BOB";
-		for(int i=0;i<name1.length();i++) {
-			char a=name1.charAt(i);
+		String name = "BOB";
+		for(int i=0;i<name.length();i++) {
+			char a=name.charAt(i);
 			String aa = "" + a;		
 			stc.push(aa);
 		}
 		String reverse="";
-		for(int i=0;i<name1.length();i++) {
+		for(int i=0;i<name.length();i++) {
 			reverse=reverse+""+stc.pop();
 			
 			
 		}
-		if(name1.equals(reverse)) {
+		if(name.equals(reverse)) {
 			System.out.println("The word is same from both sides");
 		}
 		else {
